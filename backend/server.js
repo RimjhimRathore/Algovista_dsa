@@ -4,8 +4,14 @@ const path = require("path");
 const { execFile } = require("child_process");
 
 const app = express();
-const PORT = 3001;
-const executable = path.join(__dirname, "algovista.exe");
+// const PORT = 3001;
+// const executable = path.join(__dirname, "algovista.exe");
+const PORT = process.env.PORT || 3001;
+
+const executable = path.join(
+  __dirname,
+  process.platform === "win32" ? "algovista.exe" : "algovista"
+);
 
 app.use(express.json({ limit: "20kb" }));
 
