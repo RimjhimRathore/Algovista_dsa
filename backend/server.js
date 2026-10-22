@@ -114,6 +114,12 @@ app.post("/api/visualize", (req, res) => {
   );
 });
 
+
+app.get("/", (req, res) => {
+  res.send("AlgoVista Backend is running!");
+});
+
 app.listen(PORT, () => {
   console.log(`AlgoVista API running at http://localhost:${PORT}`);
 });
+
